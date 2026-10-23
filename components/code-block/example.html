@@ -1,0 +1,9 @@
+<p>Regenerate the files with <code class="lrssn-code">scripts/build.py --write</code>.</p>
+<div class="lrssn-code-block">
+  <pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">contrast_ratio</span>(<span class="hljs-params">first: <span class="hljs-built_in">str</span>, second: <span class="hljs-built_in">str</span></span>) -&gt; <span class="hljs-built_in">float</span>:
+    <span class="hljs-string">"""Returns the WCAG contrast ratio of two colours."""</span>
+    lighter, darker = <span class="hljs-built_in">sorted</span>((luminance(first), luminance(second)))[::-<span class="hljs-number">1</span>]
+    <span class="hljs-comment"># Body text needs 4.5, and large text 3.</span>
+    <span class="hljs-keyword">return</span> (lighter + <span class="hljs-number">0.05</span>) / (darker + <span class="hljs-number">0.05</span>)</code></pre>
+  <button class="lrssn-code-block__copy" type="button" aria-label="Copy code" hidden>Copy</button>
+</div>

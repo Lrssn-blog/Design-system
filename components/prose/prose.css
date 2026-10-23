@@ -1,0 +1,154 @@
+/* Running text: everything rendered Markdown can hold. Code is styled by
+ * the code block, and callouts by the callout. */
+
+.lrssn-prose {
+    max-width: var(--lrssn-measure);
+    min-width: 0;
+    color: var(--lrssn-text-body);
+    font-family: var(--lrssn-font-serif);
+    font-size: var(--lrssn-font-size-lg);
+    line-height: var(--lrssn-line-height-reading);
+}
+
+.lrssn-prose > * {
+    margin-block: 0;
+}
+
+.lrssn-prose > * + * {
+    margin-top: 1.4em;
+}
+
+.lrssn-prose :where(h2, h3) {
+    margin: 2.2em 0 0;
+    font-family: var(--lrssn-font-ui);
+}
+
+.lrssn-prose a {
+    color: var(--lrssn-link-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.lrssn-prose a:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* A heading beside its "#" link, which shows on hover and keyboard focus,
+ * and always on touch screens. The group takes the heading's spacing. */
+.lrssn-prose .lrssn-prose__heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5em;
+    margin: 2.2em 0 0;
+}
+
+.lrssn-prose .lrssn-prose__heading > :first-child {
+    margin: 0;
+}
+
+.lrssn-prose .lrssn-prose__anchor {
+    flex: none;
+    color: var(--lrssn-text-subtle);
+    font-family: var(--lrssn-font-mono);
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity var(--lrssn-transition-base);
+}
+
+.lrssn-prose .lrssn-prose__anchor:hover {
+    color: var(--lrssn-text-color);
+}
+
+.lrssn-prose .lrssn-prose__anchor:focus-visible,
+.lrssn-prose .lrssn-prose__heading:hover .lrssn-prose__anchor {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .lrssn-prose .lrssn-prose__anchor {
+        opacity: 1;
+    }
+}
+
+.lrssn-prose [id] {
+    scroll-margin-top: 6rem;
+}
+
+.lrssn-prose blockquote {
+    margin-inline: 0;
+    padding-left: var(--lrssn-space-4);
+    border-left: 2px solid var(--lrssn-secondary-color);
+    color: var(--lrssn-text-muted);
+}
+
+.lrssn-prose img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Keeps a footnote's marker from opening a gap between lines. */
+.lrssn-prose sup {
+    line-height: 0;
+}
+
+/* A wide table scrolls inside the column, not the page. */
+.lrssn-prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    font-family: var(--lrssn-font-ui);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.lrssn-prose :where(th, td) {
+    padding: 0.45rem var(--lrssn-space-3);
+    border: 1px solid var(--lrssn-border-color);
+}
+
+.lrssn-prose th {
+    background: var(--lrssn-surface-muted);
+    color: var(--lrssn-text-color);
+    font-weight: 600;
+}
+
+.lrssn-prose th:not([align]) {
+    text-align: left;
+}
+
+.lrssn-prose .contains-task-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.lrssn-prose .task-list-item .contains-task-list {
+    padding-left: 1.5em;
+}
+
+.lrssn-prose .task-list-item input {
+    margin: 0 0.5em 0 0;
+    accent-color: var(--lrssn-secondary-color);
+}
+
+.lrssn-prose .footnotes {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--lrssn-border-color);
+    color: var(--lrssn-text-muted);
+    font-size: 0.92rem;
+}
+
+.lrssn-prose .footnotes ol {
+    padding-left: 1.5em;
+}
+
+.lrssn-prose :where([data-footnote-ref], [data-footnote-backref]) {
+    text-decoration: none;
+}
+
+@media print {
+    .lrssn-prose .lrssn-prose__anchor {
+        display: none;
+    }
+}

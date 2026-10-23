@@ -1,0 +1,82 @@
+/* A box tinted with its kind's colour, with a rule on the left and a title
+ * whose icon and word name the kind without the colour. */
+
+/* A note is the default: neutral, because the cool accent is too close to a
+ * tip. */
+.lrssn-callout,
+.lrssn-callout--note {
+    --callout-color: var(--lrssn-text-color);
+    --callout-border: var(--lrssn-text-muted);
+    --callout-background: var(--lrssn-surface-muted);
+
+    margin-inline: 0;
+    padding: 0.9rem 1.1rem;
+    border-left: 3px solid var(--callout-border);
+    border-radius: var(--lrssn-radius-sm);
+    background: var(--callout-background);
+    color: var(--lrssn-text-body);
+}
+
+.lrssn-callout > * {
+    margin-block: 0;
+}
+
+.lrssn-callout > * + * {
+    margin-top: 0.8em;
+}
+
+.lrssn-callout--tip {
+    --callout-color: var(--lrssn-success-color);
+    --callout-border: var(--lrssn-success-color);
+    --callout-background: var(--lrssn-success-background);
+}
+
+.lrssn-callout--important {
+    --callout-color: var(--lrssn-primary-text);
+    --callout-border: var(--lrssn-primary-color);
+    --callout-background: var(--lrssn-primary-soft);
+}
+
+.lrssn-callout--warning {
+    --callout-color: var(--lrssn-banner-warning-color);
+    --callout-border: var(--lrssn-banner-warning-color);
+    --callout-background: var(--lrssn-banner-warning-background);
+}
+
+.lrssn-callout--caution {
+    --callout-color: var(--lrssn-danger-color);
+    --callout-border: var(--lrssn-danger-color);
+    --callout-background: var(--lrssn-danger-background);
+}
+
+.lrssn-callout__title {
+    display: flex;
+    align-items: center;
+    gap: 0.45em;
+    color: var(--callout-color);
+    font-family: var(--lrssn-font-ui);
+    font-size: var(--lrssn-font-size-sm);
+    font-weight: 600;
+    line-height: var(--lrssn-line-height-tight);
+}
+
+.lrssn-callout__icon {
+    flex: none;
+    width: 1.15em;
+    height: 1.15em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Printers leave out backgrounds, so a full border marks the box. */
+@media print {
+    .lrssn-callout {
+        border: 1px solid var(--callout-border);
+        border-left-width: 3px;
+        background: transparent;
+        break-inside: avoid;
+    }
+}

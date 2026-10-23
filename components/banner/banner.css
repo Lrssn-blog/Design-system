@@ -1,0 +1,66 @@
+/* A message to every reader across the top of the page, under the header. */
+
+.lrssn-banner-stack {
+    position: sticky;
+    top: var(--header-height, 0px);
+    z-index: var(--lrssn-z-banner);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lrssn-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--lrssn-space-4);
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--lrssn-space-3) var(--lrssn-space-6);
+    background: var(--lrssn-banner-info-background);
+    color: var(--lrssn-banner-info-color);
+    font-family: var(--lrssn-font-ui);
+    text-align: center;
+}
+
+.lrssn-banner--warning {
+    background: var(--lrssn-banner-warning-background);
+    color: var(--lrssn-banner-warning-color);
+}
+
+.lrssn-banner--error {
+    background: var(--lrssn-banner-error-background);
+    color: var(--lrssn-banner-error-color);
+}
+
+.lrssn-banner--success {
+    background: var(--lrssn-banner-success-background);
+    color: var(--lrssn-banner-success-color);
+}
+
+.lrssn-banner__message {
+    margin: 0;
+}
+
+.lrssn-banner__message a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.lrssn-banner__dismiss {
+    padding: 0 var(--lrssn-space-1);
+    border: none;
+    background: none;
+    color: inherit;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+@media print {
+    .lrssn-banner-stack,
+    .lrssn-banner {
+        display: none;
+    }
+}

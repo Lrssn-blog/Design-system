@@ -1,0 +1,100 @@
+/* The notebook ledger: facts sit in a margin column on the left, and the
+ * writing sits right of a thin orange rule. Rows that follow each other
+ * share one unbroken rule. In a stacked ledger, and below 720px, the margin
+ * moves above the content and the rule runs down the row's left edge. */
+
+.lrssn-ledger__row {
+    display: grid;
+    grid-template-columns: var(--lrssn-ledger-margin-width) minmax(0, 1fr);
+}
+
+.lrssn-ledger__margin {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.2rem;
+    padding: var(--lrssn-space-6) var(--lrssn-ledger-gap) var(--lrssn-space-6) 0;
+    color: var(--lrssn-text-subtle);
+    font-family: var(--lrssn-font-mono);
+    font-size: var(--lrssn-font-size-xs);
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+}
+
+.lrssn-ledger__content {
+    min-width: 0;
+    padding: var(--lrssn-space-6) 0 var(--lrssn-space-6) var(--lrssn-ledger-gap);
+    border-left: 1px solid var(--lrssn-margin-rule-color);
+}
+
+.lrssn-ledger__row + .lrssn-ledger__row > .lrssn-ledger__content {
+    border-top: 1px solid var(--lrssn-border-color);
+}
+
+/* A small uppercase label, such as "Contents" or "Section". */
+.lrssn-ledger__label {
+    margin: 0;
+    color: var(--lrssn-text-subtle);
+    font-family: var(--lrssn-font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* The stacked ledger. The same rules apply below 720px and on paper. */
+.lrssn-ledger--stacked .lrssn-ledger__row {
+    grid-template-columns: minmax(0, 1fr);
+    border-left: 1px solid var(--lrssn-margin-rule-color);
+}
+
+.lrssn-ledger--stacked .lrssn-ledger__margin {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--lrssn-space-1) 0.9rem;
+    padding: var(--lrssn-space-5) 0 0 var(--lrssn-ledger-gap);
+    text-align: left;
+}
+
+.lrssn-ledger--stacked .lrssn-ledger__content {
+    padding-top: 0.4rem;
+    border-left: 0;
+}
+
+.lrssn-ledger--stacked .lrssn-ledger__row + .lrssn-ledger__row {
+    border-top: 1px solid var(--lrssn-border-color);
+}
+
+.lrssn-ledger--stacked .lrssn-ledger__row + .lrssn-ledger__row > .lrssn-ledger__content {
+    border-top: 0;
+}
+
+@media (max-width: 720px), print {
+    .lrssn-ledger .lrssn-ledger__row {
+        grid-template-columns: minmax(0, 1fr);
+        border-left: 1px solid var(--lrssn-margin-rule-color);
+    }
+
+    .lrssn-ledger .lrssn-ledger__margin {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: var(--lrssn-space-1) 0.9rem;
+        padding: var(--lrssn-space-5) 0 0 var(--lrssn-ledger-gap);
+        text-align: left;
+    }
+
+    .lrssn-ledger .lrssn-ledger__content {
+        padding-top: 0.4rem;
+        border-left: 0;
+    }
+
+    .lrssn-ledger .lrssn-ledger__row + .lrssn-ledger__row {
+        border-top: 1px solid var(--lrssn-border-color);
+    }
+
+    .lrssn-ledger .lrssn-ledger__row + .lrssn-ledger__row > .lrssn-ledger__content {
+        border-top: 0;
+    }
+}

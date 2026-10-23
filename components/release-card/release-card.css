@@ -1,0 +1,20 @@
+/* A release card is a project card. Its version is the title, and its
+ * date is in Geist Mono as YYYY-MM-DD. */
+
+.lrssn-release-card__version {
+    font-variant-numeric: tabular-nums;
+}
+
+.lrssn-release-card__date {
+    font-family: var(--lrssn-font-mono);
+    font-size: var(--lrssn-font-size-xs);
+    font-variant-numeric: tabular-nums;
+}
+
+.lrssn-release-card .lrssn-project-card__meta a {
+    color: var(--lrssn-text-muted);
+}
+
+.lrssn-release-card .lrssn-project-card__meta a:hover {
+    color: var(--lrssn-text-color);
+}
