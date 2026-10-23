@@ -1,0 +1,62 @@
+.lrssn-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--lrssn-space-2);
+    box-sizing: border-box;
+    min-height: 2.5rem;
+    padding: var(--lrssn-space-2) 0.9rem;
+    border: 1px solid var(--lrssn-primary-color);
+    border-radius: var(--lrssn-radius-sm);
+    background: var(--lrssn-primary-color);
+    color: var(--lrssn-text-on-primary);
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background var(--lrssn-transition-fast),
+        filter var(--lrssn-transition-fast);
+}
+
+.lrssn-button:hover {
+    filter: brightness(1.05);
+    text-decoration: none;
+}
+
+/* A supporting action beside the primary one. */
+.lrssn-button--secondary {
+    border-color: var(--lrssn-border-color-input);
+    background: transparent;
+    color: var(--lrssn-text-color);
+}
+
+.lrssn-button--secondary:hover {
+    background: var(--lrssn-surface-hover);
+    filter: none;
+}
+
+/* A quiet action, such as Previous and Next in a carousel. */
+.lrssn-button--ghost {
+    background: transparent;
+    color: var(--lrssn-primary-text);
+}
+
+.lrssn-button--ghost:hover {
+    background: var(--lrssn-primary-soft);
+    filter: none;
+}
+
+.lrssn-button--small {
+    min-height: 2rem;
+    padding: var(--lrssn-space-1) 0.6rem;
+    font-size: var(--lrssn-font-size-sm);
+}
+
+.lrssn-button:disabled,
+.lrssn-button[aria-disabled='true'] {
+    opacity: 0.45;
+    cursor: default;
+    filter: none;
+}

@@ -1,0 +1,83 @@
+/* A row of entries that scrolls sideways and snaps to each entry, so it
+ * works by touch, trackpad and Tab without JavaScript. js/carousel.js shows
+ * the Previous and Next buttons. */
+
+.lrssn-carousel {
+    margin-bottom: var(--lrssn-space-12);
+}
+
+.lrssn-carousel__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--lrssn-space-3) var(--lrssn-space-5);
+    padding-bottom: var(--lrssn-space-3);
+}
+
+.lrssn-carousel__title {
+    margin: 0 auto 0 0;
+    color: var(--lrssn-text-color);
+    font-family: var(--lrssn-font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.lrssn-carousel__controls {
+    display: flex;
+    gap: var(--lrssn-space-2);
+}
+
+/* `display: flex` would otherwise win over the `hidden` attribute. */
+.lrssn-carousel__controls[hidden] {
+    display: none;
+}
+
+.lrssn-carousel__more {
+    color: var(--lrssn-link-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.lrssn-carousel__more:hover {
+    text-decoration-thickness: 2px;
+}
+
+.lrssn-carousel__track {
+    display: grid;
+    grid-auto-columns: min(20rem, 85%);
+    grid-auto-flow: column;
+    gap: var(--lrssn-space-5);
+    margin: 0;
+    padding: 0 0 var(--lrssn-space-4);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    list-style: none;
+}
+
+.lrssn-carousel__slide {
+    min-width: 0;
+    scroll-snap-align: start;
+}
+
+/* Every slide's rule runs to the bottom of the row. */
+.lrssn-carousel__slide > .lrssn-ledger__row {
+    height: 100%;
+    align-content: start;
+}
+
+@media print {
+    .lrssn-carousel__controls {
+        display: none;
+    }
+
+    .lrssn-carousel__track {
+        grid-auto-flow: row;
+        overflow: visible;
+    }
+}

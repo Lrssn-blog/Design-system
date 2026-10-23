@@ -1,0 +1,57 @@
+/* A link in running text: orange and underlined, so it does not rely on
+ * colour alone. */
+.lrssn-link {
+    color: var(--lrssn-link-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.lrssn-link:hover {
+    text-decoration-thickness: 2px;
+}
+
+/* A link in a list or the navigation: muted, until the pointer is on it. */
+.lrssn-link--quiet {
+    color: var(--lrssn-text-muted);
+    text-decoration: none;
+}
+
+.lrssn-link--quiet:hover {
+    color: var(--lrssn-text-color);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+/* A link to the next step, with an arrow that moves on hover. */
+.lrssn-link--next {
+    color: var(--lrssn-text-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.lrssn-link--next:hover {
+    text-decoration: none;
+}
+
+.lrssn-link__arrow {
+    display: inline-block;
+    transition: transform var(--lrssn-transition-fast);
+}
+
+.lrssn-link--next:hover .lrssn-link__arrow {
+    transform: translateX(0.2rem);
+}
+
+/* The title of an entry: underlined in orange on hover. */
+.lrssn-link--title {
+    color: var(--lrssn-text-color);
+    text-decoration: none;
+}
+
+.lrssn-link--title:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--lrssn-primary-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}

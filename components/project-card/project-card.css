@@ -1,0 +1,82 @@
+/* A grid of cards that fill the width, each as tall as its row. */
+.lrssn-project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+    gap: var(--lrssn-space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lrssn-project-list > li {
+    display: grid;
+}
+
+.lrssn-project-card {
+    padding: var(--lrssn-space-5) var(--lrssn-space-6);
+    border: 1px solid var(--lrssn-border-color);
+    border-radius: var(--lrssn-radius-xl);
+    background: var(--lrssn-surface);
+}
+
+/* The cover: the card's full width at 16:9, edge to edge above the
+ * padding. */
+.lrssn-project-card__cover {
+    display: block;
+    width: calc(100% + 2 * var(--lrssn-space-6));
+    max-width: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: calc(-1 * var(--lrssn-space-5)) calc(-1 * var(--lrssn-space-6)) var(--lrssn-space-4);
+    border-radius: var(--lrssn-radius-xl) var(--lrssn-radius-xl) 0 0;
+    object-fit: cover;
+}
+
+.lrssn-project-card__title {
+    margin: 0 0 var(--lrssn-space-2);
+    font-size: var(--lrssn-font-size-xl);
+}
+
+.lrssn-project-card__title a {
+    color: var(--lrssn-text-strong);
+}
+
+.lrssn-project-card__summary {
+    margin: 0 0 var(--lrssn-space-3);
+    color: var(--lrssn-text-body);
+    font-family: var(--lrssn-font-serif);
+}
+
+.lrssn-project-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--lrssn-space-2) var(--lrssn-space-4);
+    margin: var(--lrssn-space-2) 0;
+    color: var(--lrssn-text-subtle);
+    font-size: 0.9rem;
+}
+
+.lrssn-project-card__status {
+    padding: 0.1rem 0.55rem;
+    border-radius: var(--lrssn-radius-pill);
+    background: var(--lrssn-secondary-soft);
+    color: var(--lrssn-text-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.lrssn-project-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--lrssn-space-1) var(--lrssn-space-5);
+    margin: var(--lrssn-space-3) 0 0;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    list-style: none;
+}
+
+.lrssn-project-card__links a {
+    color: var(--lrssn-link-color);
+}

@@ -1,0 +1,39 @@
+/* What a list shows when it is empty, or has no results: one ledger row
+ * with the state in the margin. */
+
+.lrssn-empty-state {
+    margin: var(--lrssn-space-8) 0;
+}
+
+.lrssn-empty-state__title {
+    margin: 0;
+    color: var(--lrssn-text-strong);
+    font-family: var(--lrssn-font-display);
+    font-size: var(--lrssn-font-size-2xl);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lrssn-empty-state__text {
+    margin: var(--lrssn-space-2) 0 0;
+    color: var(--lrssn-text-muted);
+    font-size: var(--lrssn-font-size-lg);
+}
+
+.lrssn-empty-state__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem var(--lrssn-space-5);
+    margin: var(--lrssn-space-5) 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lrssn-empty-state__links a {
+    color: var(--lrssn-text-color);
+    font-weight: 500;
+}
+
+.lrssn-empty-state__action {
+    margin: var(--lrssn-space-5) 0 0;
+}

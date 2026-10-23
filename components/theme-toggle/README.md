@@ -1,0 +1,40 @@
+# Theme toggle
+
+The theme toggle lets the reader choose System, Light or Dark.
+
+## Use
+
+- **System** is the default, and follows the device.
+  **Light** is Lrssn Shore, and **Dark** is Lrssn Hearth.
+- Put the toggle in the header, among the tools at the right.
+- Load `js/theme-init.js` in the `<head>` of every page, before the stylesheet, so the saved choice applies before the first paint and the page never flashes the wrong theme.
+- Load `js/index.js`, which wires the toggle: a click sets `data-theme` on `<html>`, or removes it for System, and saves the choice in `localStorage` under `theme`.
+
+## Markup
+
+```html
+<div class="lrssn-theme-toggle" role="group" aria-label="Colour theme">
+  <button class="lrssn-theme-toggle__button" type="button" data-theme-choice="system" aria-label="System theme" title="System theme" aria-pressed="true">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="3" width="12" height="8" rx="1"/><path d="M6 14h4M8 11v3"/></svg>
+  </button>
+  <button class="lrssn-theme-toggle__button" type="button" data-theme-choice="light" aria-label="Light theme" title="Light theme" aria-pressed="false">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M3 13l1.4-1.4M11.6 4.4 13 3"/></svg>
+  </button>
+  <button class="lrssn-theme-toggle__button" type="button" data-theme-choice="dark" aria-label="Dark theme" title="Dark theme" aria-pressed="false">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg>
+  </button>
+</div>
+```
+
+The script marks the pressed button from the saved choice.
+
+## Accessibility
+
+- Each button has a label, because its icon has no words.
+- `aria-pressed` tells screen readers which choice is on.
+- The toggle is left out of print, where the page is always light.
+
+## Do not
+
+- Do not offer only Light and Dark: System is the default.
+- Do not invert the colours of a theme to make the other one.

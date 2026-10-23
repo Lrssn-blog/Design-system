@@ -1,0 +1,63 @@
+/* The pages of a list, above and below it, in Geist Mono. */
+
+.lrssn-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--lrssn-space-2);
+    padding: 0 0 var(--lrssn-space-4);
+    border-bottom: 1px solid var(--lrssn-border-color);
+    font-family: var(--lrssn-font-mono);
+    font-size: 0.8rem;
+}
+
+/* Below the list, the rule is above. */
+.lrssn-pagination--bottom {
+    padding: var(--lrssn-space-5) 0 0;
+    border-top: 1px solid var(--lrssn-border-color);
+    border-bottom: 0;
+}
+
+.lrssn-pagination a,
+.lrssn-pagination__disabled {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--lrssn-border-color);
+    border-radius: var(--lrssn-radius-xs);
+    color: var(--lrssn-text-muted);
+    line-height: 1;
+}
+
+.lrssn-pagination a:hover {
+    border-color: var(--lrssn-border-color-strong);
+    color: var(--lrssn-text-color);
+    text-decoration: none;
+}
+
+.lrssn-pagination__of {
+    padding-right: 0.4rem;
+    color: var(--lrssn-text-subtle);
+}
+
+.lrssn-pagination__disabled {
+    opacity: 0.45;
+}
+
+.lrssn-pagination__numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--lrssn-space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lrssn-pagination__numbers a[aria-current='page'] {
+    border-color: var(--lrssn-text-color);
+    color: var(--lrssn-text-color);
+}
+
+@media print {
+    .lrssn-pagination {
+        display: none;
+    }
+}

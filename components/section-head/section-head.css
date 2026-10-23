@@ -1,0 +1,63 @@
+/* The head of a section page: a ledger row with the section's path in the
+ * margin, and a Playfair Display title, a lede and the section's views. */
+
+.lrssn-section-head {
+    margin-bottom: var(--lrssn-space-8);
+    border-bottom: 1px solid var(--lrssn-border-color);
+}
+
+.lrssn-section-head .lrssn-ledger__margin,
+.lrssn-section-head .lrssn-ledger__content {
+    padding-top: clamp(2.5rem, 6vw, 4.5rem);
+    padding-bottom: var(--lrssn-space-8);
+}
+
+.lrssn-section-head__title {
+    margin: 0;
+    color: var(--lrssn-text-strong);
+    font-family: var(--lrssn-font-display);
+    font-size: var(--lrssn-font-size-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.lrssn-section-head__lede {
+    max-width: 52ch;
+    margin: var(--lrssn-space-4) 0 0;
+    color: var(--lrssn-text-muted);
+    font-size: var(--lrssn-font-size-lg);
+}
+
+.lrssn-section-head__bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--lrssn-space-3) var(--lrssn-space-6);
+    margin-top: 1.75rem;
+}
+
+.lrssn-section-head__views {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--lrssn-space-2) var(--lrssn-space-5);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.lrssn-section-head__views a {
+    color: var(--lrssn-text-muted);
+}
+
+.lrssn-section-head__views a:hover {
+    color: var(--lrssn-text-color);
+}
+
+.lrssn-section-head__views a[aria-current='page'] {
+    color: var(--lrssn-text-color);
+    text-decoration: underline;
+    text-decoration-color: var(--lrssn-primary-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}

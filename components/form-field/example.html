@@ -1,0 +1,18 @@
+<form class="lrssn-form" action="#contact">
+  <div class="lrssn-form-field">
+    <label class="lrssn-form-field__label" for="contact-name">Your name</label>
+    <input class="lrssn-input" id="contact-name" type="text" name="name" autocomplete="name">
+  </div>
+  <div class="lrssn-form-field">
+    <label class="lrssn-form-field__label" for="contact-email">Reply address</label>
+    <input class="lrssn-input" id="contact-email" type="email" name="email" autocomplete="email" aria-describedby="contact-email-hint">
+    <small class="lrssn-form-field__hint" id="contact-email-hint">Optional. Leave it empty if you don't need a reply.</small>
+  </div>
+  <div class="lrssn-form-field">
+    <label class="lrssn-form-field__label" for="contact-message">Message</label>
+    <textarea class="lrssn-input" id="contact-message" name="message" rows="3" aria-invalid="true" aria-describedby="contact-message-error"></textarea>
+    <small class="lrssn-form-field__error" id="contact-message-error">Write a message before you send it.</small>
+  </div>
+  <label class="lrssn-check"><input type="checkbox" name="copy"> Send me a copy</label>
+  <button class="lrssn-button" type="button">Send message</button>
+</form>

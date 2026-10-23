@@ -1,0 +1,318 @@
+# The tokens of the Lrssn design system.
+#
+# The colour values are not here: they come from the palettes of the Lrssn
+# colour themes, Lrssn Shore (light) and Lrssn Hearth (dark), in the
+# Color-theme repository. This file says which colours the design system
+# uses, what each token is for, and holds every token that is not a colour.
+#
+# The values that are not colours are those of the Lrssn website's
+# src/styles/_variables.scss, except the spacing steps, which are the steps
+# its stylesheets use most.
+#
+# After a change, run `scripts/build.py --write`.
+
+# --- Colour ------------------------------------------------------------------
+
+# Colours beside the website's 51 tokens: a role of the palettes' [colors]
+# table, and the group the token is listed in.
+[colour.roles]
+warning-color = { role = "warning", group = "Status" }
+info-color = { role = "info", group = "Status" }
+code-keyword = { role = "keyword", group = "Code" }
+code-function = { role = "function", group = "Code" }
+code-string = { role = "string", group = "Code" }
+code-number = { role = "number", group = "Code" }
+code-type = { role = "type", group = "Code" }
+code-builtin = { role = "builtin", group = "Code" }
+code-tag = { role = "tag", group = "Code" }
+code-property = { role = "property", group = "Code" }
+code-parameter = { role = "parameter", group = "Code" }
+code-operator = { role = "operator", group = "Code" }
+code-punctuation = { role = "punctuation", group = "Code" }
+code-escape = { role = "escape", group = "Code" }
+code-comment = { role = "comment", group = "Code" }
+
+# Colours with an opacity: another colour token, and the opacity from 0 to 1.
+[colour.alpha]
+margin-rule-color = { token = "primary-color", alpha = 0.7, group = "Borders" }
+
+# What each colour token is for.
+[colour.usage]
+primary-color = "Brand orange: the primary button, the logo files, the underline of the current link and the margin rule. A fill at most once per screen. Never text."
+primary-text = "Orange text: the logo on screen, links and text on `primary-soft`."
+primary-soft = "Apricot tint: text selection, the New badge and the Important callout."
+secondary-color = "The cool accent as a fill, a border or a bar: quotes and task-list boxes. Never text."
+secondary-text = "Text in the cool accent: topic pills without a colour of their own, and breadcrumbs."
+secondary-soft = "Tint behind secondary text: the Tutorial badge and a project's status."
+link-color = "Links in running text, always underlined."
+focus-color = "The keyboard focus ring: a 2px outline, 2px away from the element."
+background = "The page, the header and the footer."
+surface = "Cards, panels, inputs and the copy button of a code block."
+surface-subtle = "Tab strips and quiet panels."
+surface-muted = "Table headings and the Note callout."
+surface-hover = "A control under the pointer, and the pressed button of the theme toggle."
+surface-sunken = "Code blocks and inline code."
+header-background = "The sticky header: the same as the page, and set apart by `header-border`."
+header-border = "The hairline under the header."
+admin-header-background = "The header of the website's admin area, with `text-on-dark`."
+text-color = "Interface text and labels, and the current link."
+text-strong = "Headings."
+text-body = "Running text."
+text-muted = "Secondary text: ledes, descriptions, and the links of the navigation and the footer."
+text-subtle = "Metadata: the ledger margin, dates, counts and labels."
+text-on-dark = "Text on `admin-header-background` and `notification-badge`."
+text-on-primary = "Text on a `primary-color` fill. Never white."
+border-color = "Borders and dividers: cards, ledger rows, tables and the footer."
+border-color-light = "Quiet borders, such as between the rows of an admin table."
+border-color-muted = "Sidebar rules, and the dots of the dot grid."
+border-color-fieldset = "The border of a fieldset."
+border-color-input = "The border of an input, a select, a textarea and a secondary button."
+border-color-strong = "The copy button of a code block, and page numbers under the pointer."
+border-color-tree = "The guide line of a nested list of topics."
+success-color = "Success, as text, and the Tip callout. Always with words."
+success-background = "Behind a success message and the Tip callout."
+success-border = "The border of a success message."
+danger-color = "Errors, as text: an error message, the border of an invalid field and the Caution callout. Always with words."
+danger-background = "Behind an error message and the Caution callout."
+danger-border = "The border of an error message."
+notification-badge = "The count on the website's notification bell, with `text-on-dark`."
+banner-info-background = "Behind an info banner."
+banner-info-color = "The text of an info banner."
+banner-warning-background = "Behind a warning banner and the Warning callout."
+banner-warning-color = "The text of a warning banner, and the Warning callout."
+banner-error-background = "Behind an error banner."
+banner-error-color = "The text of an error banner."
+banner-success-background = "Behind a success banner."
+banner-success-color = "The text of a success banner."
+tag-background-hover = "A tag under the pointer in the website's admin area."
+image-placeholder-start = "One end of the placeholder shown while an image loads."
+image-placeholder-end = "The other end of the placeholder shown while an image loads."
+resource-icon-color = "The icon beside a reference or a further-reading link."
+resource-kind-color = "The kind of a reference, such as PDF or Video."
+warning-color = "A warning, as text outside a banner. Always with words."
+info-color = "Neutral information, as text."
+code-keyword = "Keywords in code."
+code-function = "Functions and methods in code."
+code-string = "Strings in code."
+code-number = "Numbers and constants in code."
+code-type = "Types and classes in code."
+code-builtin = "Built-in names in code."
+code-tag = "Tags in markup."
+code-property = "Properties and attributes in code."
+code-parameter = "Parameters in code."
+code-operator = "Operators in code."
+code-punctuation = "Punctuation in code."
+code-escape = "Escapes and regular expressions in code."
+code-comment = "Comments in code."
+margin-rule-color = "The ledger's margin rule: `primary-color` at 70 % opacity."
+
+# --- Type --------------------------------------------------------------------
+
+[font]
+font-display = { value = "'Playfair Display', serif", usage = "The logo, and brand moments: hero lines, section titles, Article titles and empty states." }
+font-ui = { value = "'Inter', sans-serif", usage = "The interface: headings, navigation, buttons, labels, forms and tables." }
+font-serif = { value = "'Merriweather', serif", usage = "Running text: articles, posts, summaries and ledes." }
+font-mono = { value = "'Geist Mono', monospace", usage = "Code, and small metadata: dates, counts, series parts and labels." }
+
+[font-size]
+font-size-xs = { value = "0.75rem", usage = "Mono metadata and labels." }
+font-size-sm = { value = "0.875rem", usage = "Small interface text, captions and code." }
+font-size-base = { value = "1rem", usage = "Interface text." }
+font-size-lg = { value = "1.125rem", usage = "Running text and ledes." }
+font-size-xl = { value = "1.25rem", usage = "Level 3 headings, and card titles." }
+font-size-2xl = { value = "1.6rem", usage = "Level 2 headings, and the line of an empty state." }
+font-size-3xl = { value = "clamp(2rem, 4.5vw, 3rem)", usage = "Level 1 headings." }
+font-size-display = { value = "clamp(2.5rem, 6.5vw, 5.25rem)", usage = "Playfair Display hero lines and section titles." }
+
+[line-height]
+line-height-tight = { value = "1.15", usage = "Headings." }
+line-height-base = { value = "1.55", usage = "Interface text." }
+line-height-reading = { value = "1.8", usage = "Running text." }
+
+# The type styles: how the typefaces and sizes above are set together.
+# `size` is a font-size token or a length.
+[[type-style]]
+name = "display"
+group = "Brand"
+family = "font-display"
+size = "font-size-display"
+line-height = "1.02"
+weight = 700
+letter-spacing = "-0.02em"
+sample = "Notes from a curious engineer, written down so they stick."
+usage = "The one hero line of a page, and section titles. One per view."
+
+[[type-style]]
+name = "title"
+group = "Brand"
+family = "font-display"
+size = "font-size-2xl"
+line-height = "1.2"
+weight = 700
+sample = "No papers yet."
+usage = "The line of an empty state, series names and Article titles in lists."
+
+[[type-style]]
+name = "logo"
+group = "Brand"
+family = "font-display"
+size = "font-size-base"
+line-height = "1.1"
+weight = 700
+sample = "Lrssn"
+usage = "The name in the logo. Never retyped elsewhere: use the logo."
+
+[[type-style]]
+name = "h1"
+group = "Interface"
+family = "font-ui"
+size = "font-size-3xl"
+line-height = "line-height-tight"
+weight = 700
+letter-spacing = "-0.03em"
+sample = "Brand guide"
+usage = "Level 1 headings and Post titles."
+
+[[type-style]]
+name = "h2"
+group = "Interface"
+family = "font-ui"
+size = "font-size-2xl"
+line-height = "line-height-tight"
+weight = 600
+letter-spacing = "-0.02em"
+sample = "Using the colours"
+usage = "Level 2 headings."
+
+[[type-style]]
+name = "h3"
+group = "Interface"
+family = "font-ui"
+size = "font-size-xl"
+line-height = "line-height-tight"
+weight = 600
+letter-spacing = "-0.01em"
+sample = "Clear space and minimum size"
+usage = "Level 3 headings and card titles."
+
+[[type-style]]
+name = "ui"
+group = "Interface"
+family = "font-ui"
+size = "font-size-base"
+line-height = "line-height-base"
+weight = 400
+sample = "Download the CV (PDF, 120 KB)"
+usage = "Interface text: navigation, buttons, labels and forms."
+
+[[type-style]]
+name = "ui-small"
+group = "Interface"
+family = "font-ui"
+size = "font-size-sm"
+line-height = "line-height-base"
+weight = 400
+sample = "Optional. Leave it empty if you don't need a reply."
+usage = "Hints, captions and tables."
+
+[[type-style]]
+name = "body"
+group = "Reading"
+family = "font-serif"
+size = "font-size-lg"
+line-height = "line-height-reading"
+weight = 400
+sample = "It cut the build from 4 minutes to 50 seconds, at the cost of a bigger image."
+usage = "Running text, at most 65 characters wide."
+
+[[type-style]]
+name = "lede"
+group = "Reading"
+family = "font-serif"
+size = "font-size-lg"
+line-height = "1.6"
+weight = 400
+style = "italic"
+sample = "What I'm learning, building and getting wrong, in the open."
+usage = "The lede under the title of a Post or an Article, in `text-muted`."
+
+[[type-style]]
+name = "code"
+group = "Code and metadata"
+family = "font-mono"
+size = "font-size-sm"
+line-height = "1.7"
+weight = 400
+sample = "scripts/build.py --write"
+usage = "Code blocks and inline code."
+
+[[type-style]]
+name = "meta"
+group = "Code and metadata"
+family = "font-mono"
+size = "font-size-xs"
+line-height = "line-height-base"
+weight = 400
+sample = "2026-10-23 · Erik Larsson"
+usage = "Dates as YYYY-MM-DD, counts and series parts, in `text-subtle`."
+
+[[type-style]]
+name = "label"
+group = "Code and metadata"
+family = "font-mono"
+size = "0.7rem"
+line-height = "line-height-base"
+weight = 500
+letter-spacing = "0.1em"
+sample = "CONTENTS"
+usage = "Uppercase labels: the ledger margin's headings and the footer's column headings."
+
+# --- Space, shape and depth --------------------------------------------------
+
+[space]
+space-1 = { value = "0.25rem", usage = "Inside pills and badges, and between a heading and its # link." }
+space-2 = { value = "0.5rem", usage = "Between the items of a row of pills, buttons or page numbers." }
+space-3 = { value = "0.75rem", usage = "Between the fields of a form, and inside small controls." }
+space-4 = { value = "1rem", usage = "The smallest page gutter, and the space between a title and its lede." }
+space-5 = { value = "1.25rem", usage = "Between the entries of a carousel, and the padding of a card." }
+space-6 = { value = "1.5rem", usage = "The padding above and below a ledger row, and the gap between cards." }
+space-8 = { value = "2rem", usage = "Between groups, such as the columns of the footer, and under a section head." }
+space-10 = { value = "2.5rem", usage = "Above the body of a Post or an Article, and the largest page gutter." }
+space-12 = { value = "3rem", usage = "Between the sections of a page." }
+space-16 = { value = "4rem", usage = "Above related items at the end of a page." }
+space-18 = { value = "4.5rem", usage = "Above and below the head of a page on a large screen." }
+
+[radius]
+radius-xs = { value = "3px", usage = "Inline code, page numbers and the buttons inside the theme toggle." }
+radius-sm = { value = "4px", usage = "Buttons, inputs, code blocks, callouts and the theme toggle." }
+radius-md = { value = "5px", usage = "Small panels." }
+radius-lg = { value = "6px", usage = "Pictures in a grid." }
+radius-xl = { value = "8px", usage = "Cards and their covers." }
+radius-pill = { value = "999px", usage = "Topic pills, badges and a project's status." }
+
+# A shadow's geometry, and the opacity of the palette's `shadow` colour.
+[shadow]
+shadow-sm = { value = "0 2px 8px", alpha = 0.1, usage = "A small raised control." }
+shadow-md = { value = "0 4px 12px", alpha = 0.1, usage = "Menus and dropdowns." }
+shadow-lg = { value = "0 8px 30px", alpha = 0.18, usage = "A dialog. Use space, then a border, before a shadow." }
+
+[transition]
+transition-fast = { value = "0.15s ease", usage = "A colour change under the pointer, and the arrow of a link that moves." }
+transition-base = { value = "0.2s ease", usage = "The theme toggle, the table of contents and a heading's # link." }
+
+[z-index]
+z-raised = { value = "1", usage = "Above its siblings, such as the copy button of a code block." }
+z-dropdown = { value = "10", usage = "Menus inside the header." }
+z-banner = { value = "900", usage = "The sticky stack of banners, below the header." }
+z-header = { value = "1000", usage = "The sticky header." }
+z-modal = { value = "2000", usage = "A dialog, above everything." }
+
+[layout]
+content-max-width = { value = "74rem", usage = "The width of the header, the footer and the content of a page." }
+layout-max-width = { value = "960px", usage = "The width of narrower pages, such as a project or the admin area." }
+page-gutter = { value = "clamp(1rem, 4vw, 2.5rem)", usage = "The space at each side of a page. Never less than 16px." }
+measure = { value = "65ch", usage = "The widest a block of running text gets." }
+ledger-margin-width = { value = "9.5rem", usage = "The ledger's margin column, left of the rule." }
+ledger-gap = { value = "clamp(1.25rem, 3vw, 2.25rem)", usage = "The space at each side of the ledger's margin rule." }
+breakpoint-sm = { value = "640px", usage = "Below it, the navigation links get a row of their own and the footer's columns wrap. Media queries cannot read custom properties, so copy the value." }
+breakpoint-md = { value = "720px", usage = "Below it, the ledger stacks: the margin moves above the content. Media queries cannot read custom properties, so copy the value." }

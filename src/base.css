@@ -1,0 +1,111 @@
+/* The defaults for plain elements, as on the Lrssn website. :where() keeps
+ * their specificity at zero, so any class wins over them. */
+
+:where(body) {
+    margin: 0;
+    background: var(--lrssn-background);
+    color: var(--lrssn-text-color);
+    font-family: var(--lrssn-font-ui);
+    font-size: var(--lrssn-font-size-base);
+    line-height: var(--lrssn-line-height-base);
+    -webkit-font-smoothing: antialiased;
+}
+
+:where(h1, h2, h3) {
+    color: var(--lrssn-text-strong);
+    line-height: var(--lrssn-line-height-tight);
+    text-wrap: balance;
+}
+
+:where(h1) {
+    font-size: var(--lrssn-font-size-3xl);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+:where(h2) {
+    font-size: var(--lrssn-font-size-2xl);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+:where(h3) {
+    font-size: var(--lrssn-font-size-xl);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Form controls take the theme's surface and text. Without this, a control
+ * shows the browser's grey in the dark theme. */
+:where(input:not([type='checkbox'], [type='radio'], [type='range'], [type='color']), select, textarea) {
+    background-color: var(--lrssn-surface);
+    color: var(--lrssn-text-color);
+    font: inherit;
+}
+
+/* Links in the interface take the colour around them. Links in running
+ * text are underlined: see the link and prose components. */
+:where(a) {
+    color: inherit;
+    text-decoration: none;
+}
+
+:where(a:hover) {
+    text-decoration: underline;
+}
+
+::selection {
+    background: var(--lrssn-primary-soft);
+    color: var(--lrssn-text-color);
+}
+
+:focus-visible {
+    outline: 2px solid var(--lrssn-focus-color);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* A page whose footer sits at the bottom when the content is short. */
+.lrssn-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.lrssn-page > main {
+    flex: 1;
+}
+
+/* The width of a page's content, with the gutter at each side. */
+.lrssn-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--lrssn-content-max-width);
+    margin-inline: auto;
+    padding-inline: var(--lrssn-page-gutter);
+}
+
+/* Read by screen readers, and hidden from view. */
+.lrssn-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+/* Paper is light whatever the theme, and printers leave out backgrounds. */
+@media print {
+    :where(body) {
+        background: none;
+    }
+}
