@@ -1,0 +1,85 @@
+/* The header sits on the page's background, set apart by a hairline. */
+
+.lrssn-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--lrssn-z-header);
+    width: 100%;
+    border-bottom: 1px solid var(--lrssn-header-border);
+    background: var(--lrssn-header-background);
+}
+
+.lrssn-header--static {
+    position: static;
+}
+
+.lrssn-header__bar {
+    box-sizing: border-box;
+    max-width: var(--lrssn-content-max-width);
+    margin: 0 auto;
+    padding: 0.85rem var(--lrssn-page-gutter);
+}
+
+.lrssn-header__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--lrssn-space-3) var(--lrssn-space-8);
+}
+
+.lrssn-header__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--lrssn-space-1) var(--lrssn-space-6);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lrssn-header__link {
+    display: block;
+    padding: 0.35rem 0;
+    border-bottom: 2px solid transparent;
+    color: var(--lrssn-text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.lrssn-header__link:hover {
+    color: var(--lrssn-text-color);
+    text-decoration: none;
+}
+
+/* The link of the section the page is in. */
+.lrssn-header__link[aria-current='page'] {
+    border-bottom-color: var(--lrssn-primary-color);
+    color: var(--lrssn-text-color);
+}
+
+.lrssn-header__tools {
+    display: flex;
+    align-items: center;
+    gap: var(--lrssn-space-4);
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+/* On phones the links get a row of their own, under the logo and the
+ * tools, so the header stays two rows tall. */
+@media (max-width: 640px) {
+    .lrssn-header__nav {
+        column-gap: var(--lrssn-space-4);
+    }
+
+    .lrssn-header__links {
+        order: 1;
+        width: 100%;
+    }
+}
+
+@media print {
+    .lrssn-header {
+        display: none;
+    }
+}

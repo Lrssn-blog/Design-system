@@ -1,0 +1,145 @@
+/* Inline code, and code inside prose. */
+.lrssn-code,
+.lrssn-prose :not(pre) > code {
+    padding: 0.1em 0.35em;
+    border-radius: var(--lrssn-radius-xs);
+    background: var(--lrssn-surface-sunken);
+    color: var(--lrssn-text-color);
+    font-family: var(--lrssn-font-mono);
+    font-size: 0.88em;
+}
+
+.lrssn-code-block {
+    position: relative;
+}
+
+.lrssn-prose .lrssn-code-block {
+    margin: 1.4em 0 0;
+}
+
+/* A block of code, highlighted in the Lrssn themes' own colours. */
+.lrssn-code-block pre,
+.lrssn-prose pre {
+    --shiki-foreground: var(--lrssn-text-color);
+    --shiki-background: var(--lrssn-surface-sunken);
+    --shiki-token-constant: var(--lrssn-code-number);
+    --shiki-token-string: var(--lrssn-code-string);
+    --shiki-token-string-expression: var(--lrssn-code-string);
+    --shiki-token-comment: var(--lrssn-code-comment);
+    --shiki-token-keyword: var(--lrssn-code-keyword);
+    --shiki-token-parameter: var(--lrssn-code-parameter);
+    --shiki-token-function: var(--lrssn-code-function);
+    --shiki-token-punctuation: var(--lrssn-code-punctuation);
+    --shiki-token-link: var(--lrssn-link-color);
+
+    margin: 0;
+    padding: var(--lrssn-space-4) 1.1rem;
+    overflow-x: auto;
+    border: 1px solid var(--lrssn-border-color);
+    border-radius: var(--lrssn-radius-sm);
+    background: var(--lrssn-surface-sunken);
+    color: var(--lrssn-text-color);
+    font-family: var(--lrssn-font-mono);
+    font-size: var(--lrssn-font-size-sm);
+    line-height: 1.7;
+}
+
+.lrssn-code-block pre code,
+.lrssn-prose pre code {
+    padding: 0;
+    background: transparent;
+    font: inherit;
+}
+
+/* Room for the copy button, which js/code-copy.js adds. */
+.lrssn-code-block:has(.lrssn-code-block__copy:not([hidden])) pre {
+    padding-top: 3.25rem;
+}
+
+.lrssn-code-block__copy {
+    position: absolute;
+    top: var(--lrssn-space-2);
+    right: var(--lrssn-space-2);
+    z-index: var(--lrssn-z-raised);
+    padding: var(--lrssn-space-1) 0.6rem;
+    border: 1px solid var(--lrssn-border-color-strong);
+    border-radius: var(--lrssn-radius-xs);
+    background: var(--lrssn-surface);
+    color: var(--lrssn-text-muted);
+    font-family: var(--lrssn-font-mono);
+    font-size: 0.72rem;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+.lrssn-code-block__copy:hover {
+    background: var(--lrssn-surface-hover);
+    color: var(--lrssn-text-color);
+}
+
+/* The classes of highlight.js. */
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-keyword, .hljs-selector-tag, .hljs-meta .hljs-keyword) {
+    color: var(--lrssn-code-keyword);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-title.function_, .hljs-title.function, .hljs-function .hljs-title) {
+    color: var(--lrssn-code-function);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-string, .hljs-symbol) {
+    color: var(--lrssn-code-string);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-number, .hljs-literal) {
+    color: var(--lrssn-code-number);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-type, .hljs-title.class_, .hljs-class .hljs-title) {
+    color: var(--lrssn-code-type);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) .hljs-built_in {
+    color: var(--lrssn-code-builtin);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-tag, .hljs-name, .hljs-selector-class, .hljs-selector-id) {
+    color: var(--lrssn-code-tag);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-attr, .hljs-attribute, .hljs-property) {
+    color: var(--lrssn-code-property);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) .hljs-params {
+    color: var(--lrssn-code-parameter);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) .hljs-operator {
+    color: var(--lrssn-code-operator);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) .hljs-punctuation {
+    color: var(--lrssn-code-punctuation);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-regexp, .hljs-char.escape_, .hljs-subst) {
+    color: var(--lrssn-code-escape);
+}
+
+:is(.lrssn-code-block, .lrssn-prose) :is(.hljs-comment, .hljs-quote) {
+    color: var(--lrssn-code-comment);
+    font-style: italic;
+}
+
+@media print {
+    .lrssn-code-block__copy {
+        display: none;
+    }
+
+    .lrssn-code-block pre,
+    .lrssn-prose pre {
+        overflow-x: visible;
+        white-space: pre-wrap;
+        break-inside: avoid;
+    }
+}

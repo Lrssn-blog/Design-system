@@ -1,0 +1,27 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+indent_style = space
+indent_size = 4
+tab_width = 4
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+max_line_length = 80
+
+# The formats that editors and browsers expect at two spaces.
+[*.{json,html,yml,svg}]
+indent_size = 2
+max_line_length = off
+
+# Usage notes are long, and TOML strings cannot wrap.
+[*.toml]
+max_line_length = off
+
+[*.md]
+max_line_length = off

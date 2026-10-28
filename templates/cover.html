@@ -1,0 +1,62 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Lrssn</title>
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { overflow: hidden; background: var(--lrssn-background); color: var(--lrssn-text-color); font-family: var(--lrssn-font-ui); }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; }
+  .art { position: absolute; top: 0; left: 0; width: 960px; height: 288px; }
+  .art svg { display: block; width: 960px; height: 288px; }
+  .brand { fill: var(--lrssn-primary-color); }
+  .ember { fill: var(--lrssn-primary-text); }
+  .cool { fill: var(--lrssn-secondary-color); }
+  .ink { fill: var(--lrssn-text-color); }
+  .dot { fill: var(--lrssn-primary-color); }
+  .rule { stroke: var(--lrssn-margin-rule-color); stroke-width: 1; }
+  .words { position: absolute; left: 24px; bottom: 24px; max-width: 440px; }
+  .name { margin: 0; color: var(--lrssn-text-color); font-family: var(--lrssn-font-display); font-size: 120px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.92; }
+  .tagline { margin: 16px 0 0 4px; color: var(--lrssn-text-muted); font-size: 14px; line-height: 20px; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="art" aria-hidden="true">
+    <svg viewBox="0 0 960 288" width="960" height="288">
+      <!--
+        blocks      primary-color 168 x 272, the fire and the largest · text-color 120 x 136, the deep water and the candlelight · secondary-color 248 x 120, the reef and the frost · primary-text 144 x 56, the embers, bled off the right; about a third of 960 x 288
+        arrangement one tall orange slab bled off the top with satellites to its right, like the ledger's margin beside its content, space-4 gutters, corners radius-xl
+        pattern     a dot grid of 15 primary-color dots at a space-6 pitch, from the brand's principle "a faint dot grid is fine when it organises the content", plus one margin rule in margin-rule-color down the left of the blocks
+        scales      sides in multiples of space-2; gutters space-4; pitch space-6; dot r 3 (radius-xs); corners radius-xl
+      -->
+      <line class="rule" x1="488.5" y1="0" x2="488.5" y2="288"/>
+      <rect class="brand" x="504" y="-8" width="168" height="272" rx="8"/>
+      <rect class="ink" x="688" y="-8" width="120" height="136" rx="8"/>
+      <rect class="cool" x="688" y="144" width="248" height="120" rx="8"/>
+      <rect class="ember" x="824" y="-8" width="144" height="56" rx="8"/>
+      <circle class="dot" cx="840" cy="72" r="3"/>
+      <circle class="dot" cx="864" cy="72" r="3"/>
+      <circle class="dot" cx="888" cy="72" r="3"/>
+      <circle class="dot" cx="912" cy="72" r="3"/>
+      <circle class="dot" cx="936" cy="72" r="3"/>
+      <circle class="dot" cx="840" cy="96" r="3"/>
+      <circle class="dot" cx="864" cy="96" r="3"/>
+      <circle class="dot" cx="888" cy="96" r="3"/>
+      <circle class="dot" cx="912" cy="96" r="3"/>
+      <circle class="dot" cx="936" cy="96" r="3"/>
+      <circle class="dot" cx="840" cy="120" r="3"/>
+      <circle class="dot" cx="864" cy="120" r="3"/>
+      <circle class="dot" cx="888" cy="120" r="3"/>
+      <circle class="dot" cx="912" cy="120" r="3"/>
+      <circle class="dot" cx="936" cy="120" r="3"/>
+    </svg>
+  </div>
+  <div class="words">
+    <h1 class="name">Lrssn</h1>
+    <p class="tagline">An engineer's notebook: warm sand, timber and one brand orange, in Lrssn Shore and Lrssn Hearth.</p>
+  </div>
+</div>
+</body>
+</html>

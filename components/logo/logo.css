@@ -1,0 +1,53 @@
+/* The mark is inline SVG drawn in currentColor, so the mark and the name
+ * always share one colour. */
+
+.lrssn-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--lrssn-primary-text);
+    text-decoration: none;
+}
+
+.lrssn-logo:hover {
+    text-decoration: none;
+}
+
+.lrssn-logo__mark {
+    display: block;
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 64;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.lrssn-logo__name {
+    font-family: var(--lrssn-font-display);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.lrssn-logo__username {
+    font-family: var(--lrssn-font-display);
+    font-size: 0.85em;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.lrssn-logo--icon-only {
+    gap: 0;
+}
+
+.lrssn-logo--name-user-right .lrssn-logo__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.lrssn-logo--name-below {
+    flex-direction: column;
+    gap: var(--lrssn-space-1);
+}

@@ -1,0 +1,63 @@
+/* The contents of a long page, in the ledger's margin. The section being
+ * read has a bar in the brand orange; js/table-of-contents.js marks it. */
+
+.lrssn-table-of-contents {
+    position: sticky;
+    top: 6rem;
+    text-align: left;
+}
+
+/* In the margin, the list is as wide as the column. */
+.lrssn-ledger__margin:has(> .lrssn-table-of-contents) {
+    align-items: stretch;
+}
+
+.lrssn-table-of-contents__list {
+    margin: var(--lrssn-space-3) 0 0;
+    padding: 0;
+    font-family: var(--lrssn-font-ui);
+    font-size: 0.82rem;
+    line-height: 1.4;
+    list-style: none;
+}
+
+.lrssn-table-of-contents__list li + li {
+    margin-top: var(--lrssn-space-2);
+}
+
+/* Every link keeps room for the bar, so marking one shifts nothing. */
+.lrssn-table-of-contents__list a {
+    display: block;
+    padding-left: 0.6rem;
+    border-left: 2px solid transparent;
+    color: var(--lrssn-text-muted);
+    overflow-wrap: anywhere;
+    transition:
+        color var(--lrssn-transition-base),
+        border-color var(--lrssn-transition-base);
+}
+
+.lrssn-table-of-contents__list a:hover {
+    color: var(--lrssn-text-color);
+}
+
+.lrssn-table-of-contents__list a[aria-current='true'] {
+    border-left-color: var(--lrssn-primary-color);
+    color: var(--lrssn-text-color);
+}
+
+.lrssn-table-of-contents__nested {
+    padding-left: var(--lrssn-space-3);
+}
+
+@media (max-width: 720px) {
+    .lrssn-table-of-contents {
+        position: static;
+    }
+}
+
+@media print {
+    .lrssn-table-of-contents {
+        display: none;
+    }
+}
